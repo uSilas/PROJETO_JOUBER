@@ -58,8 +58,21 @@ btn.addEventListener("click", ()=>{
     const {signInWithPopUp, user} = AuthFirebase();
 
     signInWithPopUp().then(data => {
-        console.log("deu bom")
+        
+        fetch("http://localhost:3000/cliente/cadastro", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ nome_user: data.displayName})
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+            
+        
     })
+    
 
     
 })
@@ -80,7 +93,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         // User is signed in
         img.src = user.photoURL
         p.innerHTML = user.email
-
+         
         console.log(user);
       } else {
         // User is signed out
