@@ -3,7 +3,7 @@ import {collection} from "firebase/firestore";
 import {query, where, getDocs} from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import express from 'express';
-var delete_produtos = express.Router();
+var delete_router = express.Router();
 
 delete_produtos.post('/delete', async (req,res) =>{
     const nome_user = req.body.nome_user;
@@ -35,4 +35,4 @@ delete_produtos.post('/delete', async (req,res) =>{
 }
 })
 
-export default delete_produtos;
+export default delete_router;
