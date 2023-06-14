@@ -9,18 +9,15 @@
 </head>
 <body>
     <div class="conteiner">
-        <form class="form_update" method="post" action="/routes/produto_update.mjs" >
+        <form class="form_update" method="post" action="http://localhost:3000/produto/update" >
             <div class="input-list">
-                <label>Nome do produto a ser alterado:</label>
-                <input type="text" name="nome_jogo">
-                <label>Alterar nome:</label>
-                <input type="text" name="nome_game">
-                <label>Alterar descrição:</label>
-                <input type="text" name="desc_jogo">
-                <label>Alterar genero</label>
-                <input type="text" name="genero_jogo">
-                <label>Alterar preço:</label>
-                <input type="text" name="preco">
+            <input type="text" name="nome_jogo" placeholder="Digite o nome do produto ja existente">
+            <input type="text" name="nome_produto" placeholder="Adicione um novo nome">
+            <input type="text" name="descricao" placeholder="Adicione uma nova descrição">
+            <input type="text" name="genero_jogo" placeholder="Adicione um novo gênero">
+            <input type="text" name="nome_empresa" placeholder="Digite o novo nome da empresa">
+            <input type="text" name="requisitos" placeholder="Adicione os novos requisitos mínimos">
+            <input type="number" name="preco" placeholder="Adicione um novo preço">
                 <input type="submit" value="Alterar" id="enviar">
             </div>
         </form>

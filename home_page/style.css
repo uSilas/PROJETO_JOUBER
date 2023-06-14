@@ -74,4 +74,26 @@ body{
     height: 100%;
     width: 100%;
 }
-    
+.visible{
+    display:none;
+
+}   
+#btn1{
+    width: 12%;
+    margin-left: -2%;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+    background: none;
+}
+#adquiridos{
+    cursor: pointer;
+    margin-left: 20%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+    background: none;
+}

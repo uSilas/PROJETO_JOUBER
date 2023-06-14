@@ -48,11 +48,9 @@ export function AuthFirebase(){
 
     return {signInWithPopUp, SignOutGoogle}
 }
-
+const menu = document.querySelector('.menu');
 const btn = document.getElementById("btn")
-const btn1 = document.getElementById("btn1")
-const img = document.getElementById("img")
-const p = document.getElementById("p")
+const btn1 = document.querySelector('#btn1')
 
 btn.addEventListener("click", ()=>{
     const {signInWithPopUp, user} = AuthFirebase();
@@ -76,32 +74,31 @@ btn.addEventListener("click", ()=>{
 
     
 })
+firebase.auth().onAuthStateChanged((user)=>{
 
+    if (user) {
+        var adquirido = document.querySelector('#adquiridos');
+        adquirido.classList.toggle("visible")
+        btn.classList.toggle("visible")
+        btn1.classList.toggle("visible")
+      } else {
+        // User is signed out
+        console.log('User is signed out');
+      }
+})   
 
 btn1.addEventListener("click", ()=>{
     const {SignOutGoogle} = AuthFirebase();
 
     SignOutGoogle().then(() => {
         console.log("voce saiu")
+        var adquirido = document.querySelector('#adquiridos')
+        adquirido.classList.toggle("visible")
+        btn.classList.toggle("visible")
+        btn1.classList.toggle("visible")
     })
+    
 
     
 })
 
-firebase.auth().onAuthStateChanged((user)=>{
-    if (user) {
-        // User is signed in
-        img.src = user.photoURL
-        p.innerHTML = user.email
-         
-        console.log(user);
-      } else {
-        // User is signed out
-        console.log('User is signed out');
-      }
-})
-
-
-
-
-   

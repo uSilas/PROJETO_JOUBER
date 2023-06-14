@@ -14,31 +14,32 @@ body{
 .conteiner{
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
     justify-content: center;
     color: white;
     background-color: #2E294E;
-    margin-top: 24vh;
-    height: 50vh;
-    width: 20vw;
+    margin-top: 10%;
+    height: 32vw;
+    width: 48vw;
     align-items: center;
 }
 .input-list{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 44vw;
     font-size:x-large;
+    gap: 12px;
     
 }
 .input-list input{
-    padding: 4px;
-    border-radius: 5px;
-    height: 32px;
-    width: 18vw;
-    outline: 0;
-    border: 0;
-    font-size: 70%;
+    outline: none;
     
+    border-radius: 5px;
+    padding: 1%;
+    height: 2vw;
+    width: 100%;
+    font-size: 100%;
 }
 #enviar{
     border-radius: 8px;
@@ -54,6 +55,6 @@ body{
 #enviar:hover{
     
     
-    color:white;
-    background-color:#211d38
+    color:#211d38;
+    box-shadow: #131120 0px 0px 14px;
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigBang Store</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="formulario">
+    <form action="http://localhost:3000/produto/cadastro" method="post">
+        <div class="input-list">
+        <input type="text" name="nome_produto" placeholder="Adicione um nome">
+        <input type="text" name="descricao" placeholder="Adicione descrição">
+        <input type="text" name="genero_jogo" placeholder="Adicione o gênero">
+        <input type="text" name="nome_empresa" placeholder="Digite o nome da empresa">
+        <input type="text" name="requisitos" placeholder="Adicione os requisitos mínimos">
+        <input type="number" name="preco" placeholder="Adicione um preço">
+        <label style="color:white">Envie a imagem capa do jogo:</label>
+        <input type="file" id="file" style="color:aliceblue">
+        <input type="text" id="link_img" name="link_img" style="display: none;">
+        <input type="submit" id="enviar"style="cursor:pointer;" value="Enviar">
+        </div>
+        
+    </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script type="module" src="./index.mjs"></script>
+</body>
+</html>
