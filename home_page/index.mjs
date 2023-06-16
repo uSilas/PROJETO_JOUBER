@@ -9,8 +9,34 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
-
+const db = firebase.firestore()  
+const storage = firebase.storage();
+const storageRef = storage.ref("produtos");
 const provider = new firebase.auth.GoogleAuthProvider();
+
+function exibirDadosDoFirestore() {
+    // Obtenha a referência do documento que você deseja exibir
+    var documentoRef = db.collection("produto").doc("7d8svBCWOlzSTROOZl6i");
+  
+    // Recupere os dados do documento
+    documentoRef.get().then(function(doc) {
+      if (doc.exists) {
+        // Se o documento existir, exiba seus dados no HTML
+        var dados = doc.data();
+  
+        // Exiba os dados no HTML
+        document.getElementById("nome").textContent = dados.nome_produto;
+        document.getElementById("idade").textContent = dados.preco;
+        // ... adicione outros elementos HTML conforme necessário
+  
+      } else {
+        // Se o documento não existir, exiba uma mensagem de erro
+        console.log("O documento não existe!");
+      }
+    }).catch(function(error) {
+      console.log("Erro ao obter o documento:", error);
+    });
+  }
 
 export function AuthFirebase(){
     let user;
