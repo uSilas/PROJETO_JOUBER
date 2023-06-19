@@ -16,8 +16,9 @@ const productId = urlParams.get('id');
 // Use o ID do produto para exibir os detalhes do produto na página
 console.log("ID do produto:", productId);
 
+const url = `http://localhost:3000/product_select?id=${productId}`;
 
-var products = fetch('http://localhost:3000/product_select')
+var product = fetch(url)
   .then(response => response.json())
   .then(data => {
     console.log(data);
@@ -27,6 +28,5 @@ var products = fetch('http://localhost:3000/product_select')
     
     console.error('Ocorreu um erro:', error);
   });
-  
 
 
