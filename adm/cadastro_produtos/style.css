@@ -46,3 +46,11 @@ body{
     background-color: rgb(242, 242, 242);
     box-shadow: rgb(21, 10, 35) 1px 0px 8px ;
 }
+#genero{
+    outline: none;
+    border-radius: 5px;
+    padding: 1%;
+    height: 6%;
+    width: 90%;
+    font-size: 100%;
+}

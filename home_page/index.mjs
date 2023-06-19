@@ -9,34 +9,47 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore()  
-const storage = firebase.storage();
-const storageRef = storage.ref("produtos");
-const provider = new firebase.auth.GoogleAuthProvider();
 
-function exibirDadosDoFirestore() {
-    // Obtenha a referência do documento que você deseja exibir
-    var documentoRef = db.collection("produto").doc("7d8svBCWOlzSTROOZl6i");
+const listContainer =  document.querySelector('#list')
+var products = []
+
+function render(products){
+    let list = '';
+    if(products.length < 1){
+        list += `<div id="no-products" style="color:white;">nenhum produto dísponivel</div>`
+    }else{
+        products.forEach((product, index) =>{
+            list+=`<div class="product"><div class="product-image">
+            <img src="${product.data.link_img}" alt="">
+        </div>
+        <h1>${product.data.nome_produto} </br>${product.data.preco} R$ </h1>
+        <div id="codigo_produto" style="display:none;">${product.id}</div>
+        <button id="compre">COMPRE AGORA</button>
+        </div>
+            
+            `
+            
+        })
+    }
+
+
+    listContainer.innerHTML = list;
+}
+
+products = fetch('http://localhost:3000/list')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    render(data);
+    
+  })
+  .catch(error => {
+    
+    console.error('Ocorreu um erro:', error);
+  });
   
-    // Recupere os dados do documento
-    documentoRef.get().then(function(doc) {
-      if (doc.exists) {
-        // Se o documento existir, exiba seus dados no HTML
-        var dados = doc.data();
-  
-        // Exiba os dados no HTML
-        document.getElementById("nome").textContent = dados.nome_produto;
-        document.getElementById("idade").textContent = dados.preco;
-        // ... adicione outros elementos HTML conforme necessário
-  
-      } else {
-        // Se o documento não existir, exiba uma mensagem de erro
-        console.log("O documento não existe!");
-      }
-    }).catch(function(error) {
-      console.log("Erro ao obter o documento:", error);
-    });
-  }
+
+const provider = new firebase.auth.GoogleAuthProvider();
 
 export function AuthFirebase(){
     let user;
@@ -127,4 +140,16 @@ btn1.addEventListener("click", ()=>{
 
     
 })
+document.querySelector('#list').addEventListener('click', function(event) {
+    if (event.target.classList.contains('product')) {
+        // Obtém o elemento .product clicado
+        const productElement = event.target;
+
+        const divFilho = productElement.querySelector('#codigo_produto');
+        // Redireciona o usuário para outra página com base no ID do produto
+        const valorDivFilho = divFilho.textContent;
+        window.location.href = `../tela_produto/index.html?id=${valorDivFilho}`;
+
+    }
+});
 

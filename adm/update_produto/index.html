@@ -11,17 +11,34 @@
     <div class="conteiner">
         <form class="form_update" method="post" action="http://localhost:3000/produto/update" >
             <div class="input-list">
-            <input type="text" name="nome_jogo" placeholder="Digite o nome do produto ja existente">
-            <input type="text" name="nome_produto" placeholder="Adicione um novo nome">
-            <input type="text" name="descricao" placeholder="Adicione uma nova descrição">
-            <input type="text" name="genero_jogo" placeholder="Adicione um novo gênero">
-            <input type="text" name="nome_empresa" placeholder="Digite o novo nome da empresa">
-            <input type="text" name="requisitos" placeholder="Adicione os novos requisitos mínimos">
+            <input type="text" name="nome_jogo" placeholder="Digite o nome do produto ja existente"class="input-transform">
+            <input type="text" name="nome_produto" placeholder="Adicione um novo nome"class="input-transform">
+            <input type="text" name="descricao" placeholder="Adicione uma nova descrição"class="input-transform">
+            <select name="genero_jogo" id="genero">
+                <option value="null">SELECIONE O TIPO DO JOGO</option>
+                <option value="AÇÃO">AÇÃO</option>
+                <option value="AVENTURA">AVENTURA</option>
+                <option value="TERROR">TERROR</option>
+                <option value="FPS">FPS</option>
+                <option value="RPG">RPG</option>
+                <option value="PVP">PVP</option>
+                <option value="BATTLE ROYALE">BATTLE ROYALE</option>
+                <option value="ESTRATÉGIA">ESTRATÉGIA</option>
+                <option value="MOBA">MOBA</option>
+            </select>
+            <input type="text" name="nome_empresa" placeholder="Digite o novo nome da empresa" class="input-transform">
+           
+            <input type="text" name="requisitos" placeholder="Adicione os novos requisitos mínimos" class="input-transform">
             <input type="number" name="preco" placeholder="Adicione um novo preço">
+            <input type="file" id="file" style="color:aliceblue">
+            <input type="text" id="link_img" name="link_img" style="display: none;">
                 <input type="submit" value="Alterar" id="enviar">
             </div>
         </form>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 </body>
 <script src="./index.js"></script>
 </html>

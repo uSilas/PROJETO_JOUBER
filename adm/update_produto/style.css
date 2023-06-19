@@ -58,3 +58,12 @@ body{
     color:#211d38;
     box-shadow: #131120 0px 0px 14px;
 }
+#genero{
+    outline: none;
+    
+    border-radius: 5px;
+    padding: 1%;
+    height: 2vw;
+    width: 100%;
+    font-size: 90%;
+}

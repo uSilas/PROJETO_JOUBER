@@ -11,11 +11,22 @@
     <div class="formulario">
     <form action="http://localhost:3000/produto/cadastro" method="post">
         <div class="input-list">
-        <input type="text" name="nome_produto" placeholder="Adicione um nome">
-        <input type="text" name="descricao" placeholder="Adicione descrição">
-        <input type="text" name="genero_jogo" placeholder="Adicione o gênero">
-        <input type="text" name="nome_empresa" placeholder="Digite o nome da empresa">
-        <input type="text" name="requisitos" placeholder="Adicione os requisitos mínimos">
+        <input type="text" name="nome_produto" id="input_nome" placeholder="Adicione um nome" class="input-transform">
+        <input type="text" name="descricao" id="input_desc" placeholder="Adicione descrição" class="input-transform">
+        <select name="genero_jogo" id="genero">
+            <option value="null">SELECIONE O TIPO DO JOGO</option>
+            <option value="AÇÃO">AÇÃO</option>
+            <option value="AVENTURA">AVENTURA</option>
+            <option value="TERROR">TERROR</option>
+            <option value="FPS">FPS</option>
+            <option value="RPG">RPG</option>
+            <option value="PVP">PVP</option>
+            <option value="BATTLE ROYALE">BATTLE ROYALE</option>
+            <option value="ESTRATÉGIA">ESTRATÉGIA</option>
+            <option value="MOBA">MOBA</option>
+        </select>
+        <input type="text" name="nome_empresa" placeholder="Digite o nome da empresa" id="input_empresa" class="input-transform">
+        <input type="text" name="requisitos" placeholder="Adicione os requisitos mínimos" id="input_req" class="input-transform">
         <input type="number" name="preco" placeholder="Adicione um preço">
         <label style="color:white">Envie a imagem capa do jogo:</label>
         <input type="file" id="file" style="color:aliceblue">

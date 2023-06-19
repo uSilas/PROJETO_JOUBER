@@ -14,8 +14,14 @@ firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 const storageRef = storage.ref("produtos");
 const file = document.getElementById("file");
+var inputs = document.getElementsByClassName("input-transform");
 
-
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("input", function() {
+                var texto = this.value;
+                this.value = texto.toUpperCase();
+            });
+        }
 //funçao que faz o upload e retorna o link
 async function setFile(file){
 

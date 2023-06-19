@@ -5,7 +5,8 @@ import {router_produto} from './routes/produto_update.mjs';
 import cors from 'cors';
 import { initializeApp } from "firebase/app";
 import delete_router from './routes/delete.mjs';
-
+import lista_router from './routes/lista_produtos.mjs';
+import productSelect from './routes/produto_chamado.mjs';
 
 const port = 3000;
 const global = express();
@@ -18,6 +19,8 @@ global.use('/', router_cliente);
 global.use('/',router_produtos);
 global.use('/',router_produto);
 global.use('/', delete_router);
+global.use('/', lista_router);
+global.use('/', productSelect);
 global.listen(3000,()=>{
   console.log('ta na porta 3000')
 })
