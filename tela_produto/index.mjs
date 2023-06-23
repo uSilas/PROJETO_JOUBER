@@ -22,11 +22,39 @@ var product = fetch(url)
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    
+    console.log(data.data.link_img);
+    imagem(data);
+    titulo(data);
+    capa(data);
   })
   .catch(error => {
     
     console.error('Ocorreu um erro:', error);
   });
+  
+function imagem(product){
+    const divElement = document.querySelector('.conteiner');
+    divElement.style.backgroundImage = `url(${product.data.link_img})`;
 
+}
+function titulo(product){
+    const text = document.querySelector('#title');
+    text.innerHTML = `${product.data.nome_produto}`+`</br>`+`${product.data.preco}`;
+}
+function capa(product){
+    const capa = document.querySelector('.capa');
+    capa.style.backgroundImage = `url(${product.data.link_img})`;
+    const desc = document.querySelector('#desc');
+    desc.innerHTML = `${product.data.descricao}`;
+    const requisitos = document.querySelector('#req');
+    requisitos.innerHTML = `REQUISITOS MÍNIMOS: `+`</br>`+` `+`</br>`+`${product.data.requisitos}`
+    const empresa = document.querySelector('#empresa');
+    empresa.innerHTML = `EMPRESA: `+`</br>`+` `+`</br>`+`${product.data.nome_empresa}`
+}
 
+document.querySelector('.input').addEventListener('click', function(product) {
+
+      window.location.href = `../tela_pagamento/index.html?id=${productId}`;
+
+  
+});

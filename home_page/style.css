@@ -23,7 +23,7 @@ body{
 }
 #btn{
     cursor: pointer;
-    margin-left: 24%;
+    margin-left: 76%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 800;
     font-size: 24px;
@@ -71,11 +71,31 @@ body{
 .visible{
     display:none;
 
+}
+.rodape{
+    margin-top: 6%;
+    background-color: #2E294E;
+    height: 4vw;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    
+}
+.rodape a{
+    margin-left: 6%;
+}
+.rodape button{
+    cursor: pointer;
+    
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    color:white;
+    background-color:#2E294E;
 }   
 #btn1{
-    width: 12%;
-    margin-left: -2%;
     cursor: pointer;
+    margin-left: 74%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 800;
     font-size: 24px;
@@ -111,6 +131,7 @@ body{
     border-radius: 5px;
     transition-duration: 0.5s;
 }
+
 .product h1{
     text-align: center;
     margin-top: 4%;

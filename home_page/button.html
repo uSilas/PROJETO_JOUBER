@@ -11,19 +11,24 @@
     <div class="menu">
     <img src="../style/BIG_BANG_STORE__1_-removebg-preview.png" id="logo">
     <button type="button" id="btn_jogos" style="cursor: pointer;">JOGOS</button>
-    
-    <input type="text" id="barra_pesquisa" placeholder="Pesquise aqui o jogo desejado">
     <button type="button" id="btn">LOGIN</button>
-    <button type="button" class="visible" id="adquiridos">ADQUIRIDOS</button>
-    <button type="button" class="visible" id="btn1">SIGN OUT</button>
+    
+    <input type="submit" class="visible" id="btn1" onclick="window.location.reload()" value="SIGN OUT">
     </div>
     <div class="carrossel">
         
     </div>
+    <h1 id="text"style="color:white; font-size: xx-large; font-family: Arial, Helvetica, sans-serif;margin-left: 6%;margin-top: 2%;">Caso logado, você terá acesso aos produtos aqui:</h1>
     <section id="list">
         
     </section>
-    
+    <footer class="rodape">
+        <a href="https://www.instagram.com/_bigbang_store_/">
+        <button>Redes Sociais</button> 
+        
+        </a>
+        <p style="color: white; font-family:Arial, Helvetica, sans-serif; margin-left: 30%; font-size: 1.5rem;"> SOBRE: Nosso site entrega para você as melhores ofertas de jogos no momento, </br>disponíveis para o seu computador.</p>
+    </footer>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
     <script type="module" src="./index.mjs"></script>

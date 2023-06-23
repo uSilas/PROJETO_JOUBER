@@ -10,7 +10,7 @@ productSelect.get('/product_select', async (req,res) =>{
     const newLocal = doc(firestore, "produto", doc_id);
     const docRef = newLocal;
     const docSnap = await getDoc(docRef);
-    res.json({id: doc.id, data: doc.data()});
+    res.json({id: docSnap.id, data: docSnap.data()});
 });
 
 export default productSelect;

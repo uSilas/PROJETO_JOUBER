@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    border:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #011638;
+    display: flex;
+    margin-top: 6%;
+    justify-content: center;
+}
+.conteiner{
+    display: flex;
+    border-radius: 10px;
+    height: 40vw;
+    width: 60vw;
+    background-color: #2E294E;
+    align-items: center;
+    margin-left: 8%;
+}
+.input-list{
+    margin-left: 10%;
+    display: flex;
+    width: 60vw;
+    flex-direction: column;
+    gap: 24px;
+}
+.input-list input{
+    font-size: 100%;
+    padding: 1%;
+    outline: none;
+    border-radius: 5px;
+    height: 28px;
+    width: 80%;
+}
+.input-list select{
+    font-size: 100%;
+   
+    outline: none;
+    border-radius: 5px;
+    height: 28px;
+    width: 80%;
+}
+#botao{
+    padding: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.qr-fundo{
+    
+    width: 30vw;
+    height: 30vw;
+    background-color: #675bb2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px;
+    flex-direction: column;
+    gap: 2%;
+}
+.qr-code{
+    
+    position: relative;
+    width: 70%;
+    height: 70%;
+    
+}
+.textinho{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color:white;
+}
+

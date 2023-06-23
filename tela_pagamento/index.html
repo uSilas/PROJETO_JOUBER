@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="conteiner">
+        <form id="formulario">
+            <div class="input-list">
+                <input type="text" name="preco" style="display: none;" id="precor">
+                <input type="text" name="nome" placeholder="Insira seu nome aqui" class="input-transform">
+                <input type="text" name="email" placeholder="Insira seu email aqui" class="input-transform">
+                <input type="text" name="telefone" placeholder="Insira seu telefone aqui" class="input-transform">
+                <input type="text" name="rua" placeholder="Insira o nome da sua rua aqui" class="input-transform">
+                <input type="text" name="bairro" placeholder="Insira o nome do seu bairro aqui" class="input-transform">
+                <input type="text" name="cep" placeholder="Insira seu CEP aqui">
+                <input type="text" name="city" placeholder="Insira sua cidade aqui" class="input-transform">
+                <select id="uf" name="UF">
+                    <option value="">Selecione</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                 </select>
+                <input type="text" name="casa_number" placeholder="Insira o numero da sua casa aqui">
+                <input type="text" name="cpf" placeholder="Insira seu CPF aqui">
+                <input type="text" name="cod_produto" value="22" style="display: none;">
+                <input type="text" name="quantidade" placeholder="Insira a quantidade do produto">
+                
+                <input type="submit" id="botao" value="Enviar">
+                
+            </div>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.mjs"></script>
+</body>
+</html>

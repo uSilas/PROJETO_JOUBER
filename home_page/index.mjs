@@ -19,7 +19,7 @@ function render(products){
         list += `<div id="no-products" style="color:white;">nenhum produto dísponivel</div>`
     }else{
         products.forEach((product, index) =>{
-            list+=`<div class="product"><div class="product-image">
+            list+=`<div class="product" class="visible"><div class="product-image">
             <img src="${product.data.link_img}" alt="">
         </div>
         <h1>${product.data.nome_produto} </br>${product.data.preco} R$ </h1>
@@ -36,18 +36,6 @@ function render(products){
     listContainer.innerHTML = list;
 }
 
-products = fetch('http://localhost:3000/list')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    render(data);
-    
-  })
-  .catch(error => {
-    
-    console.error('Ocorreu um erro:', error);
-  });
-  
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -107,6 +95,7 @@ btn.addEventListener("click", ()=>{
             .then(data => console.log(data))
             .catch(error => console.error(error));
             
+        console.log("voce está logado")    
         
     })
     
@@ -116,10 +105,25 @@ btn.addEventListener("click", ()=>{
 firebase.auth().onAuthStateChanged((user)=>{
 
     if (user) {
-        var adquirido = document.querySelector('#adquiridos');
-        adquirido.classList.toggle("visible")
+        var text = document.querySelector('#text');
+        text.classList.toggle("visible");
+        
         btn.classList.toggle("visible")
         btn1.classList.toggle("visible")
+
+        products = fetch('http://localhost:3000/list')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        render(data);
+    
+  })
+  .catch(error => {
+    
+    console.error('Ocorreu um erro:', error);
+  });
+  
+
       } else {
         // User is signed out
         console.log('User is signed out');
@@ -131,10 +135,11 @@ btn1.addEventListener("click", ()=>{
 
     SignOutGoogle().then(() => {
         console.log("voce saiu")
-        var adquirido = document.querySelector('#adquiridos')
-        adquirido.classList.toggle("visible")
+        
         btn.classList.toggle("visible")
         btn1.classList.toggle("visible")
+        var text = document.querySelector('#text');
+        text.classList.toggle("visible");
     })
     
 
@@ -152,4 +157,3 @@ document.querySelector('#list').addEventListener('click', function(event) {
 
     }
 });
-
